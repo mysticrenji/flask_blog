@@ -1,9 +1,12 @@
 /*DROP TABLE IF EXISTS posts;*/
 
-CREATE TABLE IF NOT EXISTS  posts (
+CREATE TABLE IF NOT EXISTS  Products (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    title TEXT NOT NULL,
-    content TEXT NOT NULL,
-UNIQUE (title) ON CONFLICT ROLLBACK
+    productname TEXT NOT NULL,
+    brand TEXT NOT NULL,
+    category TEXT NOT NULL,
+    stockstatus TEXT NOT NULL,
+    store TEXT NOT NULL,
+    quantity INTEGER
 );
