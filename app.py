@@ -22,7 +22,7 @@ def region1():
 @app.route('/mm-berlin')
 def region2():
     conn = get_db_connection()
-    products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products  where store ="mm-berlin"' ).fetchall()
+    products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products where store ="mm-berlin"' ).fetchall()
     conn.close()
     return render_template('homepage.html', headings=headings, data=products)
 
