@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.exceptions import abort
 from init_db import initDB
 
+
 def get_db_connection():
     conn = sqlite3.connect('./data/database.db')
     conn.row_factory = sqlite3.Row
@@ -24,11 +25,12 @@ app.config['SECRET_KEY'] = 'your secret key'
 
 
 @app.route('/')
+@app.route('/Grover-de')
 def index():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM posts').fetchall()
+    posts = conn.execute('SELECT * FROM products').fetchall()
     conn.close()
-    return render_template('index.html', posts=posts)
+    return render_template('index.html', products=products)
 
 
 @app.route('/<int:post_id>')
@@ -90,5 +92,5 @@ def delete(id):
 
 
 if __name__ == '__main__':
-        initDB()
-        app.run(host='0.0.0.0')
+    initDB()
+    app.run(host='0.0.0.0')
