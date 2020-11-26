@@ -9,14 +9,15 @@ def get_db_connection():
     return conn
 
 app = Flask(__name__)
+headings= ("Name","Brand","Category","Availability","Quantity")
 
 @app.route('/')
 @app.route('/Grover-de')
 def index():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM products').fetchall()
+    products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products ').fetchall()
     conn.close()
-    return render_template('index.html', products=products)
+    return render_template('homepage.html', headings=headings, data=products)
 
 
 def get_post(post_id):
@@ -31,9 +32,6 @@ def get_post(post_id):
 
 # app = Flask(__name__)
 # app.config['SECRET_KEY'] = 'your secret key'
-
-
-
 
 
 @app.route('/<int:post_id>')

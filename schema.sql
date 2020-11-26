@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS  products (
     category TEXT NOT NULL,
     stockstatus TEXT NOT NULL,
     store TEXT NOT NULL,
-    quantity INTEGER
+    quantity INTEGER,
+    UNIQUE (productname) ON CONFLICT ROLLBACK
 );
