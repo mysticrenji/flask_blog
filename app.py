@@ -13,14 +13,14 @@ headings= ("Name","Brand","Category","Availability","Quantity")
 
 @app.route('/')
 @app.route('/Grover-de')
-def index():
+def region1():
     conn = get_db_connection()
-    products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products ="Grover-de"').fetchall()
+    products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products where store ="Grover-de"').fetchall()
     conn.close()
     return render_template('homepage.html', headings=headings, data=products)
 
 @app.route('/mm-berlin')
-def index():
+def region2():
     conn = get_db_connection()
     products = conn.execute('SELECT productname,brand,category,stockstatus,quantity FROM products  where store ="mm-berlin"' ).fetchall()
     conn.close()
