@@ -22,6 +22,22 @@ def initDB():
                     ('Galaxy A5', 'Samsung', 'Mobile Phones',
                      'In Stock', 'Grover-de', 10)
                     )
+        cur.execute("INSERT INTO products (productname, brand,category,stockstatus,store,quantity) VALUES (?, ?, ?, ?, ?,?)",
+                    ('Iphone', 'Apple', 'Mobile Phones',
+                     'In Stock', 'Grover-de', 10)
+                    )
+        cur.execute("INSERT INTO products (productname, brand,category, stockstatus, store,quantity) VALUES (?, ?, ?, ?, ?,?)",
+                    ('IPad', 'Apple', 'Mobile Tablet', 
+                    'In Stock', 'mm-berlin',15)
+                    )
+        cur.execute("INSERT INTO products (productname, brand,category, stockstatus, store,quantity) VALUES (?, ?, ?, ?, ?,?)",
+                    ('Pixel4', 'Google', 'Mobile Phones',
+                     'Out of Stock', 'mm-berlin', 0)
+                    )
+        cur.execute("INSERT INTO products (productname, brand,category,stockstatus,store,quantity) VALUES (?, ?, ?, ?, ?,?)",
+                    ('Galaxy A5', 'Samsung', 'Mobile Phones',
+                     'Out of Stock', 'mm-berlin', 0)
+                    )
 
         connection.commit()
         connection.close()
