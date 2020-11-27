@@ -9,5 +9,5 @@ CREATE TABLE IF NOT EXISTS  products (
     stockstatus TEXT NOT NULL,
     store TEXT NOT NULL,
     quantity INTEGER,
-    UNIQUE (productname)  ON CONFLICT ROLLBACK
+    UNIQUE (productname,store)  ON CONFLICT ROLLBACK
 );

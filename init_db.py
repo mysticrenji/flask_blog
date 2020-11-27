@@ -24,7 +24,7 @@ def initDB():
                     )
         cur.execute("INSERT INTO products (productname, brand,category,stockstatus,store,quantity) VALUES (?, ?, ?, ?, ?,?)",
                     ('Iphone', 'Apple', 'Mobile Phones',
-                     'In Stock', 'Grover-de', 10)
+                     'In Stock', 'mm-berlin', 10)
                     )
         cur.execute("INSERT INTO products (productname, brand,category, stockstatus, store,quantity) VALUES (?, ?, ?, ?, ?,?)",
                     ('IPad', 'Apple', 'Mobile Tablet', 
